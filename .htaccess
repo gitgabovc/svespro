@@ -6,5 +6,5 @@
 </IfModule>
 
 <IfModule !mod_rewrite.c>
-    ErrorDocument 404 /activaCELL/index.php
+    ErrorDocument 404 /productVirtual/index.php
 </IfModule>
