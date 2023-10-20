@@ -45,6 +45,7 @@
       <div class="tab-pane active " id="messages-tue">
         <!-- Basic datatable -->
         <div class="panel panel-flat">
+<div class="table-responsive">
 
           <table class="table datatable-basic">
             <thead>
@@ -94,9 +95,9 @@
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="<?php echo base_url('empleado/edit') . "/" . $row->idEmpleado; ?>"><i class="icon-file-pdf"></i> Modificar</a></li>
+                          <li><a href="<?php echo base_url('empleado/edit') . "/" . $row->idEmpleado; ?>"><i class="icon-pencil5"></i> Modificar</a></li>
                           <li><a href="<?php echo base_url('empleado/cambiarAcceso') . "/" . $row->idEmpleado."/" .$row->acceso; ?>"><i class="icon-file-pdf"></i> Cambiar Acceso</a></li>
-                          <li><a href="#" onclick="deleteConfirm(<?php echo $row->idEmpleado; ?>)"><i class="icon-file-excel"></i> Eliminar</a></li>
+                          <li><a href="#" onclick="deleteConfirm(<?php echo $row->idEmpleado; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -107,6 +108,8 @@
               } ?>
             </tbody>
           </table>
+</div>
+
         </div>
         <!-- /basic datatable -->
       </div>

@@ -46,7 +46,7 @@
                 <!-- Basic datatable -->
                 <div class="panel panel-flat">
 
-                    <table class="table datatable-basic">
+                    <table class="table ">
                         <thead>
                             <tr>
                                 <th>Nº</th>
@@ -70,8 +70,8 @@
                                             </a>
 
                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="<?php echo base_url('color/edit')."/".$row->idColor; ?>"><i class="icon-file-pdf" ></i> Modificar</a></li>
-                                                <li><a href="#" onclick="deleteConfirm(<?php echo $row->idColor; ?>)"><i class="icon-file-excel"></i> Eliminar</a></li>
+                                                <li><a href="<?php echo base_url('color/edit')."/".$row->idColor; ?>"><i class="icon-pencil5" ></i> Modificar</a></li>
+                                                <li><a href="#" onclick="deleteConfirm(<?php echo $row->idColor; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
                                             </ul>
                                         </li>
                                     </ul>

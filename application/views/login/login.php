@@ -171,7 +171,7 @@ switch ($msg) {
                 data: queryString,
                 success: function(r) {
                     if (r == "true") {
-                        window.location.href = "http://localhost:8080/svespro/producto";
+                        window.location.href = "inicio";
                     } else {
 
                     }

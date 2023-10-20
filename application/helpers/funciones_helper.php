@@ -12,6 +12,26 @@ function formatearFecha($fecha)
     return $fechaformateada;
 }
 
+function mostrarSoloHoraDeFecha($fecha)
+{
+    /*2022-06-18 22:15:10*/
+    
+
+    $hora = substr($fecha, 11, 5);
+    return $hora;
+}
+
+function formatearFechaSinHora($fecha)
+{
+    /*2022-06-18 22:15:10*/
+    $dia = substr($fecha, 8, 2);
+    $mes = substr($fecha, 5, 2);
+    $anio = substr($fecha, 0, 4);
+
+    $fechaformateada = $dia . "/" . $mes . "/" . $anio ;
+    return $fechaformateada;
+}
+
 function estado($edad)
 {
     if ($edad >= 18) {

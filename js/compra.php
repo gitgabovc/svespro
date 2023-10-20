@@ -224,7 +224,7 @@
                     success: function(r) {
                          console.log(r);
                          if (r == "true") {
-                              window.location.href = "http://localhost:8080/svespro/compra";
+                              window.location.href = "compra";
                          } else {
                               console.log("error en la insercion");
                          }

@@ -66,7 +66,7 @@
               ?>
                 <tr>
                   <td><?php echo $indice; ?></td>
-                  <td><?php echo $row->fechaRegistro; ?></td>
+                  <td><?php echo formatearFechaSinHora($row->fechaRegistro); ?></td>
                   <td><?php echo $row->nombreProveedor; ?></td>
                   <td><?php echo $row->nombreEmpleado ." ".$row->primerApellidoEmpleado." ". $row->segundoApellidoEmpleado; ?></td>
                   <td><?php echo $row->totalCompra; ?></td>
@@ -84,8 +84,8 @@
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="<?php echo base_url('compra/edit') . "/" . $row->idCompra; ?>"><i class="icon-file-pdf"></i> Modificar</a></li>
-                          <li><a href="#" onclick="deleteConfirm(<?php echo $row->idCompra; ?>)"><i class="icon-file-excel"></i> Eliminar</a></li>
+                          <li><a href="<?php echo base_url('compra/edit') . "/" . $row->idCompra; ?>"><i class="icon-pencil5"></i> Modificar</a></li>
+                          <li><a href="#" onclick="deleteConfirm(<?php echo $row->idCompra; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
                         </ul>
                       </li>
                     </ul>

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
         language: {
             search: '<span>Buscar:</span> _INPUT_',
-            searchPlaceholder: 'escribe lo que buscas...',
+            searchPlaceholder: 'Escribe lo que buscas...',
             lengthMenu: '<span>Mostrar:</span> _MENU_',
             paginate: { 'first': 'First', 'last': 'Last', 'next': $('html').attr('dir') == 'rtl' ? '&larr;' : '&rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr;' : '&larr;' }
         },

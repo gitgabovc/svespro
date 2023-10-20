@@ -46,7 +46,7 @@
                 <!-- Basic datatable -->
                 <div class="panel panel-flat">
 
-                    <table class="table datatable-basic">
+                    <table class="table ">
                         <thead>
                             <tr>
                                 <th>Nº</th>
@@ -56,30 +56,30 @@
                         </thead>
                         <tbody>
                             <?php
-                            $indice=1;
-                            foreach($proveedores->result() as $row){
-                             ?>
-                            <tr>
-                                <td><?php echo $indice?></td>
-                                <td><?php echo $row->nombreProveedor?></td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                <i class="icon-menu9"></i>
-                                            </a>
+                            $indice = 1;
+                            foreach ($proveedores->result() as $row) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $indice ?></td>
+                                    <td><?php echo $row->nombreProveedor ?></td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
 
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="<?php echo base_url('proveedor/edit')."/".$row->idProveedor; ?>"><i class="icon-file-pdf" ></i> Modificar</a></li>
-                                                <li><a href="#" onclick="deleteConfirm(<?php echo $row->idProveedor; ?>)"><i class="icon-file-excel"></i> Eliminar</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <?php 
-                            $indice++;
-                        }?>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="<?php echo base_url('proveedor/edit') . "/" . $row->idProveedor; ?>"><i class="icon-pencil5"></i> Modificar</a></li>
+                                                    <li><a href="#" onclick="deleteConfirm(<?php echo $row->idProveedor; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            <?php
+                                $indice++;
+                            } ?>
                         </tbody>
                     </table>
                 </div>
@@ -108,14 +108,14 @@
 
 
 
-                                                                                                
+
                                             </div>
 
                                             <div class="col-md-6">
-                                             
-                                                       
 
-                                                
+
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -124,10 +124,10 @@
                             </fieldset>
 
                             <div class="text-right">
-                            <a class="btn btn-primary" id="btnCancelarE" href="<?php echo base_url();?>proveedor" type="submit" name="action"><i class="fa fa-arrow-circle-left"></i> Cancelar
-                                                </a>
+                                <a class="btn btn-primary" id="btnCancelarE" href="<?php echo base_url(); ?>proveedor" type="submit" name="action"><i class="fa fa-arrow-circle-left"></i> Cancelar
+                                </a>
                                 <button type="submit" class="btn btn-primary" id="btnGuardar" name="btnGuardar">Guardar <i class="icon-arrow-right14 position-right"></i></button>
-                            
+
                         </form>
                     </div>
                 </div>

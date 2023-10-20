@@ -32,8 +32,9 @@
 
 				<li class="dropdown dropdown-user">
 					<a class="dropdown-toggle" data-toggle="dropdown">
-						<!-- <img src="<?php //echo base_url(); ?>Limitless/global_assets/images/placeholders/fotoperfil.png" alt=""> -->
-						<?php  fotoUsuario($this->session->userdata('foto')) ?>
+						<!-- <img src="<?php //echo base_url(); 
+										?>Limitless/global_assets/images/placeholders/fotoperfil.png" alt=""> -->
+						<?php fotoUsuario($this->session->userdata('foto')) ?>
 						<span><?php echo strtoupper(cambiarTipo($this->session->userdata('tipo', "10"))) ?></span>
 						<i class="caret"></i>
 					</a>
@@ -65,7 +66,7 @@
 					<div class="sidebar-user">
 						<div class="category-content">
 							<div class="media">
-								<a href="#" class="media-left"><?php  fotoUsuarioCircular($this->session->userdata('foto')) ?></a>
+								<a href="#" class="media-left"><?php fotoUsuarioCircular($this->session->userdata('foto')) ?></a>
 								<div class="media-body">
 									<span class="media-heading text-semibold"><?php echo strtoupper($this->session->userdata('nombreCompleto')) ?></span>
 
@@ -92,10 +93,10 @@
 
 								<!-- Main -->
 								<li class="navigation-header"><span>Menú</span> <i class="icon-menu" title="Main pages"></i></li>
-								<li><a href="#"><i class="icon-home4"></i> <span>Inicio</span></a></li>
+								<li><a href="<?php echo base_url("inicio");?>"><i class="icon-home4"></i> <span>Inicio</span></a></li>
 
 								<li class="<?php echo $this->uri->segment(1) == 'venta' ? "active" : "" ?>">
-									<a href="#"><i class="icon-copy"></i> <span>Ventas</span></a>
+									<a href="#"><i class="icon-cart2"></i> <span>Ventas</span></a>
 									<ul>
 										<li><a href="<?php echo base_url(); ?>venta">Ventas</a></li>
 									</ul>
@@ -112,7 +113,7 @@
 												$this->uri->segment(1) == 'compra' ||
 													$this->uri->segment(1) == 'proveedor'
 													? "active" : "" ?>">
-										<a href="#"><i class="icon-copy"></i> <span>Compras</span></a>
+										<a href="#"><i class="icon-store"></i> <span>Compras</span></a>
 										<ul>
 											<li><a href="<?php echo base_url(); ?>compra">Comprar</a></li>
 											<li><a href="<?php echo base_url(); ?>proveedor">Inventario</a></li>
@@ -129,23 +130,10 @@
 
 
 
-								<?php
-								if ($tipo == "adm") {
-								?>
 
-									<li class="<?php echo $this->uri->segment(1) == 'empleado' ? "active" : "" ?>">
-										<a href="#"><i class="icon-copy"></i> <span>Usuarios</span></a>
-										<ul>
-											<li><a href="<?php echo base_url(); ?>empleado">Usuarios</a></li>
-										</ul>
-									</li>
-
-								<?php
-								}
-								?>
 
 								<li class="<?php echo $this->uri->segment(1) == 'cliente' ? "active" : "" ?>">
-									<a href="#"><i class="icon-copy"></i> <span>Clientes</span></a>
+									<a href="#"><i class="icon-users"></i> <span>Clientes</span></a>
 									<ul>
 										<li><a href="<?php echo base_url(); ?>cliente">Clientes</a></li>
 									</ul>
@@ -160,7 +148,7 @@
 												$this->uri->segment(1) == 'material' ||
 												$this->uri->segment(1) == 'color'
 												? "active" : "" ?>">
-									<a href="#"><i class="icon-copy"></i> <span>Productos</span></a>
+									<a href="#"><i class="icon-clipboard3"></i> <span>Productos</span></a>
 									<ul>
 										<li><a href="<?php echo base_url(); ?>producto">Producto</a></li>
 
@@ -183,69 +171,42 @@
 									</ul>
 								</li>
 
+								<?php
+								if ($tipo == "adm") {
+								?>
 
+									<li class="<?php echo $this->uri->segment(1) == 'empleado' ? "active" : "" ?>">
+										<a href="#"><i class="icon-vcard"></i> <span>Usuarios</span></a>
+										<ul>
+											<li><a href="<?php echo base_url(); ?>empleado">Usuarios</a></li>
+										</ul>
+									</li>
 
+								<?php
+								}
+								?>
+<?php
+										if ($tipo == "adm") {
+										?>
 								<li class="<?php echo
-											$this->uri->segment(1) == 'producto' ||
-												$this->uri->segment(1) == 'categoria' ||
-												$this->uri->segment(1) == 'marca' ||
-												$this->uri->segment(1) == 'talla' ||
-												$this->uri->segment(1) == 'material' ||
-												$this->uri->segment(1) == 'color'
+											$this->uri->segment(1) == 'reporte' 
 												? "active" : "" ?>">
-									<a href="#"><i class="icon-copy"></i> <span>Reportes</span></a>
+									<a href="#"><i class="icon-stats-bars3"></i> <span>Reportes</span></a>
 									<ul>
-										<li><a href="<?php echo base_url(); ?>producto">Producto</a></li>
-
-										<?php
-										if ($tipo == "adm") {
-										?>
-
-											<li><a href="<?php echo base_url(); ?>categoria">Categoria</a></li>
+										
 
 
 
-											<li><a href="<?php echo base_url(); ?>marca">Marca</a></li>
-											<li><a href="<?php echo base_url(); ?>color">Color</a></li>
-											<li><a href="<?php echo base_url(); ?>material">Material</a></li>
-											<li><a href="<?php echo base_url(); ?>talla">Talla</a></li>
-
-										<?php
-										}
-										?>
+										<li><a href="<?php echo base_url("reporte/ventas"); ?>">Venta Por Fechas</a></li>
+										<li><a href="<?php echo base_url("reporte/compra"); ?>">Compras Por Fechas</a></li>
+											<li><a href="<?php echo base_url("reporte/cliente"); ?>">Clientes</a></li>
+										
 									</ul>
 								</li>
-
-								<li class="<?php echo
-											$this->uri->segment(1) == 'producto' ||
-												$this->uri->segment(1) == 'categoria' ||
-												$this->uri->segment(1) == 'marca' ||
-												$this->uri->segment(1) == 'talla' ||
-												$this->uri->segment(1) == 'material' ||
-												$this->uri->segment(1) == 'color'
-												? "active" : "" ?>">
-									<a href="#"><i class="icon-copy"></i> <span>Cierre de Caja</span></a>
-									<ul>
-										<li><a href="<?php echo base_url(); ?>producto">Producto</a></li>
-
-										<?php
-										if ($tipo == "adm") {
-										?>
-
-											<li><a href="<?php echo base_url(); ?>categoria">Categoria</a></li>
-
-
-
-											<li><a href="<?php echo base_url(); ?>marca">Marca</a></li>
-											<li><a href="<?php echo base_url(); ?>color">Color</a></li>
-											<li><a href="<?php echo base_url(); ?>material">Material</a></li>
-											<li><a href="<?php echo base_url(); ?>talla">Talla</a></li>
-
-										<?php
+								<?php
 										}
 										?>
-									</ul>
-								</li>
+								
 
 
 
@@ -270,8 +231,9 @@
 
 					<div class="breadcrumb-line">
 						<ul class="breadcrumb">
-							<li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
-							<li class="active">Dashboard</li>
+							<li><a href="#"><i class="icon-home2 position-left"></i> INICIO</a></li>
+							<li class="active"><?php echo
+											strtoupper($this->uri->segment(1)) ?></li>
 						</ul>
 
 

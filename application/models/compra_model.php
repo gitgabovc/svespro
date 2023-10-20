@@ -35,7 +35,7 @@ class Compra_model extends CI_Model
 		$this->db->join('marca', 'marca.idMarca = producto.idMarca');
 		$this->db->join('categoria', 'categoria.idCategoria = producto.idCategoria');
 		$this->db->join('tipocolor', 'tipocolor.idColor = producto.idColor');
-		$this->db->join('tipoMaterial material', 'material.idTipoMaterial = producto.idMaterial');
+		$this->db->join('tipomaterial material', 'material.idTipoMaterial = producto.idMaterial');
 		$this->db->join('tipotalla talla', 'talla.idTalla = producto.idTalla');
 		return $this->db->get();
 	}

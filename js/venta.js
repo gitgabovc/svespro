@@ -224,7 +224,7 @@ function generarVenta(){
                     //el protocolo
                     type: "POST",
                     //a donde quiero mandar el objeto
-                    url: 'http://localhost/svespro/index.php/venta/carrito',    
+                    url: 'venta/carrito',    
                     data: ob,
                     dataType: "JSON",
                     //que quieres mostrar como recargable al iniciar
@@ -249,7 +249,7 @@ function envioCarrito() {
           data:obj,
           success: function(data){
                // console.log(data);
-               window.location.href=`http://localhost/svespro/venta/imprimir/${data}`;
+               window.location.href=`venta/imprimir/${data}`;
           }
      })
 }
@@ -505,21 +505,23 @@ $(document).ready(function()
                data: formData,
                success: function(r) {
                     console.log(r);
-                    if (r == "true") {
-                         window.location.href = "http://localhost:8080/svespro/venta/rc";
+                    if (r != "false") {
+                         window.open("venta/rc/"+r);
+                         window.location.href = "venta";
                     } else {
                          console.log("error en la insercion");
                     }
                }
           });
-
-
+          
+          
      });
-
-//alert('gsdgdfgdfg');
-
+     
+     //alert('gsdgdfgdfg');
+     
 // $('#btnGuardar').click(function(){
-
+     
+     
 //  	var  formData=$('#FormDatos').serialize();
      //alert(formData);
      //return false;

@@ -6,7 +6,7 @@
 <script type="text/javascript">
   function deleteConfirm(id) {
     if (confirm('¿Esta realmente segur@ de Eliminar?')) {
-      window.location.href = "usuario/delete" + "/" + id;
+      window.location.href = "venta/delete" + "/" + id;
 
     }
   }
@@ -159,6 +159,7 @@
                 <th>Empleado</th>
                 <th>Total</th>
                 <th>Fecha de Venta</th>
+                <th>Descripcion</th>
                 <th class="text-center">Acciones</th>
               </tr>
             </thead>
@@ -173,6 +174,7 @@
                   <td><?php echo $row->eNombre . ' ' . $row->ePA . ' ' . $row->eSA; ?></td>
                   <td><?php echo $row->precioUnitario; ?></td>
                   <td><?php echo formatearFecha($row->fr); ?></td>
+                  <td><?php echo character_limiter($row->descripcion,14); ?></td>
 
                   <td class="text-center">
                     <ul class="icons-list">
@@ -182,8 +184,9 @@
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="<?php echo base_url('usuario/edit') . "/" . $row->idV; ?>"><i class="icon-file-pdf"></i> Modificar</a></li>
-                          <li><a href="#" onclick="deleteConfirm(<?php echo $row->idV; ?>)"><i class="icon-file-excel"></i> Eliminar</a></li>
+                          <li><a href="<?php echo base_url('venta/edit') . "/" . $row->idV; ?>"><i class="icon-pencil5"></i> Modificar</a></li>
+                          <li><a href="#" onclick="deleteConfirm(<?php echo $row->idV; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
+                          <li><a href="<?php echo base_url('venta/rc').'/'.$row->idV?>" target="_blank" ><i class="icon-file-pdf"></i> Recibo</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -337,11 +340,11 @@
                 </div>
                 <div class="cont">
 
-                  <p class="venta-cobro__total-venta f-w-b  m-b-0">Total Recibido: Bs.- <span class="tRecibido-span">0</span></p>
-                  <p class="venta-cobro__total-venta f-w-b  m-b-0">Total Venta: Bs.- <span class="enta-cobro__total-venta-span">0</span></p>
-                  <p class="venta-cobro__total-venta f-w-b  m-b-0">Total Cambio: Bs.- <span class="tCambio-span">0</span></p>
+                  <p class="venta-cobro__total-venta f-w-b  m-b-0">Total Recibido: Bs.- <span class="tRecibido-span" style="display: block;">0</span></p>
+                  <p class="venta-cobro__total-venta f-w-b  m-b-0">Total Venta: Bs.- <span class="enta-cobro__total-venta-span" style="display: block;">0</span></p>
+                  <p class="venta-cobro__total-venta f-w-b  m-b-0">Total Cambio: Bs.- <span class="tCambio-span" style="display: block;">0</span></p>
                 </div>
-                <button type="submit" class="btn btn-primary venta-cobro__boton" id="btnGuardar" name="btnGuardar">Generar Venta <i class="icon-arrow-right14 position-right"></i></button>
+                <a target="_blank" class="btn btn-primary venta-cobro__boton" id="btnGuardar" name="btnGuardar">Generar Venta <i class="icon-arrow-right14 position-right"></i></a>
               </div>
             </div>
 

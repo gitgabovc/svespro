@@ -57,7 +57,7 @@ class Login extends CI_Controller
 			// $this->load->view('inic/header');
 			// $this->load->view('tablero/index');
 			// $this->load->view('inic/footer');
-			redirect('producto', 'refresh');
+			redirect('inicio', 'refresh');
 		} else {
 			//$this->load->view('loginform',$data);
 			//redirect('login/index/2','refresh');

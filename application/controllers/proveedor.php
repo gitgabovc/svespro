@@ -32,7 +32,7 @@ class Proveedor extends CI_Controller
 		$data['nombreProveedor'] = $_POST['txtProveedor'];
 
 		$this->proveedor_model->insert($data);
-		redirect("proveedor");
+		redirect("/");
 	}
 
 
@@ -55,7 +55,7 @@ class Proveedor extends CI_Controller
 			$this->load->view('layouts/footer');
 		} else {
 			//regresar a index enviar parametro
-			redirect('proveedor');
+			redirect('/');
 		}
 	}
 
@@ -66,7 +66,7 @@ class Proveedor extends CI_Controller
 		//$data['fechaRegistro']=$_POST['txtFechaRegistro'];
 
 		$this->proveedor_model->update($id, $data);
-		redirect("proveedor");
+		redirect("/proveedor");
 	}
 	/* funciones que pordrian servir  
 	function buscarIDiden(){
