@@ -30,14 +30,15 @@ class Talla extends CI_Controller {
 		$data['talla']=$_POST['talla'];
 	
 		$this->talla_model->insert($data);
-		redirect('talla','refresh');
+		redirect("talla", "refresh");
+		
 
 	}
 	
 
 	public function delete($id){
 		$this->talla_model->delete($id);
-		redirect('talla','refresh');
+		echo "<script>window.location.href = "."'".base_url("talla")."'".";</script>";
 		
 	}
 
@@ -65,7 +66,8 @@ class Talla extends CI_Controller {
 		//$data['fechaRegistro']=$_POST['txtFechaRegistro'];
 
 		$this->talla_model->update($id,$data);
-		redirect('talla','refresh');
+		echo "<script>window.location.href = "."'".base_url("talla")."'".";</script>";
+
 	}
 /* funciones que pordrian servir  
 	function buscarIDiden(){

@@ -9,6 +9,8 @@ class Cliente_model extends CI_Model
 		$this->db->select("idCliente,nombres,primerApellido,segundoApellido,carnetIdentidad,fechaNacimiento,sexo,telefono,nit, DATE_FORMAT((fechaRegistro),('%d/%m/%Y')) as fechaRegistro, DATE_FORMAT((fechaActualizacion),('%d/%m/%Y')) as fechaActualizacion"); //select*
 		$this->db->from('cliente');
 		$this->db->where('estado','1');
+		$this->db->order_by('idCliente','desc');
+
 		
 		return $this->db->get();	//devolucion del resultado de la consulta
 	}

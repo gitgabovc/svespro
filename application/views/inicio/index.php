@@ -240,21 +240,7 @@
                 <!-- Daily sales -->
                 <div class="panel-heading">
                     <h6 class="panel-title text-slate">Productos Más Vendidos</h6>
-                    <div class="heading-elements">
-
-                        <ul class="icons-list">
-                            <li class="dropdown text-muted">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
-                                    <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
-                                    <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="panel-body">

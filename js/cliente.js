@@ -1,13 +1,11 @@
 $(document).ready(function()
 {
 
-//alert('gsdgdfgdfg');
 
 $('#btnGuardar').click(function(){
 
  	var  formData=$('#FormDatos').serialize();
-     //alert(formData);
-     //return false;
+
 
      $.ajax({
           type: "POST",

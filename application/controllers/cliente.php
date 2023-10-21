@@ -26,14 +26,10 @@ class Cliente extends CI_Controller {
 		$data['nombres']=$_POST['txtNombres'];
 		$data['primerApellido']=$_POST['txtPrimerApellido'];
 		$data['segundoApellido']=$_POST['txtSegundoApellido'];		
-		$data['carnetIdentidad']=$_POST['txtCarnetIdentidad'];
-		$data['fechaNacimiento']=$_POST['txtFechaNacimiento'];
-		$data['sexo']=$_POST['txtSexo'];
 		$data['telefono']=$_POST['txtTelefono'];
-		$data['nit']=$_POST['txtNit'];
 
 		$this->cliente_model->insert($data);
-		redirect('cliente','refresh');
+		redirect('/');
 
 	}
 	
@@ -41,7 +37,8 @@ class Cliente extends CI_Controller {
 	public function delete($id){
 		$data = array('estado' => 0 );
 		$this->cliente_model->delete($id,$data);
-		redirect('cliente','refresh');
+		echo "<script>window.location.href = "."'".base_url("cliente")."'".";</script>";
+
 		
 	}
 
@@ -67,14 +64,10 @@ class Cliente extends CI_Controller {
 		$data['nombres']=$_POST['txtNombres'];
 		$data['primerApellido']=$_POST['txtPrimerApellido'];
 		$data['segundoApellido']=$_POST['txtSegundoApellido'];		
-		$data['carnetIdentidad']=$_POST['txtCarnetIdentidad'];
-		$data['fechaNacimiento']=$_POST['txtFechaNacimiento'];
-		$data['sexo']=$_POST['txtSexo'];
 		$data['telefono']=$_POST['txtTelefono'];
-		$data['nit']=$_POST['txtNit'];
 
 		$this->cliente_model->update($id,$data);
-		redirect('cliente','refresh');
+		echo "<script>window.location.href = "."'".base_url("cliente")."'".";</script>";
 	}
 /* funciones que pordrian servir  
 	function buscarIDiden(){

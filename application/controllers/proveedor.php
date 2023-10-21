@@ -32,7 +32,7 @@ class Proveedor extends CI_Controller
 		$data['nombreProveedor'] = $_POST['txtProveedor'];
 
 		$this->proveedor_model->insert($data);
-		redirect("/");
+		redirect("proveedor");
 	}
 
 

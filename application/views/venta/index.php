@@ -155,6 +155,7 @@
             <thead>
               <tr>
                 <th>Nº</th>
+                <th>Cod.</th>
                 <th>Nombre Cliente</th>
                 <th>Empleado</th>
                 <th>Total</th>
@@ -170,6 +171,7 @@
               ?>
                 <tr>
                   <td><?php echo $indice; ?></td>
+                  <td><?php echo $row->idV; ?></td>
                   <td><?php echo $row->cNombre . ' ' . $row->cPA . ' ' . $row->cSA; ?></td>
                   <td><?php echo $row->eNombre . ' ' . $row->ePA . ' ' . $row->eSA; ?></td>
                   <td><?php echo $row->precioUnitario; ?></td>

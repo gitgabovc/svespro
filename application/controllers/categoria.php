@@ -31,7 +31,7 @@ class Categoria extends CI_Controller {
 		//$data['FechaRegistro']=$_POST['txtFechaRegistro'];
 	
 		$this->categoria_model->insert($data);
-		redirect('categoria','refresh');
+		redirect('categoria');
 
 	}
 	

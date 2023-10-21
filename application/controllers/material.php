@@ -30,15 +30,15 @@ class Material extends CI_Controller {
 		$data['material']=$_POST['material'];
 	
 		$this->material_model->insert($data);
-		redirect('material','refresh');
+		redirect("material");
+
 
 	}
 	
 
 	public function delete($id){
 		$this->material_model->delete($id);
-		redirect('material','refresh');
-		
+		echo "<script>window.location.href = "."'".base_url("material")."'".";</script>";
 	}
 
 
@@ -65,7 +65,8 @@ class Material extends CI_Controller {
 		//$data['fechaRegistro']=$_POST['txtFechaRegistro'];
 
 		$this->material_model->update($id,$data);
-		redirect('material','refresh');
+		echo "<script>window.location.href = "."'".base_url("material")."'".";</script>";
+
 	}
 /* funciones que pordrian servir  
 	function buscarIDiden(){

@@ -53,51 +53,41 @@
                                 <th>Nombres</th>
                                 <th>Ap. Paterno</th>
                                 <th>Ap. Materno</th>
-                                <th>C.I.</th>
-                                <th>F. Nacimiento</th>
-                                <th>Sexo</th>
                                 <th>Telefono</th>
-                                <th>Nit</th>
-                                <th>Creado</th>
-                                <th>Modificado</th>
+                                <th>F. Registro</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $indice=1;
-                            foreach($cliente->result() as $row){
-                             ?>
-                            <tr>
-                                <td><?php echo $indice;?></td>
-                                <td><?php echo $row->nombres;?></td>
-                                <td><?php echo $row->primerApellido;?></td>            
-                                <td><?php echo $row->segundoApellido;?></td>
-                                <td><?php echo $row->carnetIdentidad;?></td>
-                                <td><?php echo $row->fechaNacimiento;?></td>
-                                <td><?php echo $row->sexo;?></td>               
-                                <td><?php echo $row->telefono;?></td>
-                                <td><?php echo $row->nit;?></td>
-                                <td><?php echo $row->fechaRegistro; ?></td>
-                                <td><?php echo $row->fechaActualizacion; ?></td>
-                                <td class="text-center">
-                                    <ul class="icons-list">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                <i class="icon-menu9"></i>
-                                            </a>
+                            $indice = 1;
+                            foreach ($cliente->result() as $row) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $indice; ?></td>
+                                    <td><?php echo $row->nombres; ?></td>
+                                    <td><?php echo $row->primerApellido; ?></td>
+                                    <td><?php echo $row->segundoApellido; ?></td>
+                                    <td><?php echo $row->telefono; ?></td>
+                                    <td><?php echo $row->fechaRegistro; ?></td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
 
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="<?php echo base_url('cliente/edit')."/".$row->idCliente; ?>"><i class="icon-pencil5" ></i> Modificar</a></li>
-                                                <li><a href="#" onclick="deleteConfirm(<?php echo $row->idCliente; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <?php 
-                            $indice++;
-                        }?>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="<?php echo base_url('cliente/edit') . "/" . $row->idCliente; ?>"><i class="icon-pencil5"></i> Modificar</a></li>
+                                                    <li><a href="#" onclick="deleteConfirm(<?php echo $row->idCliente; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            <?php
+                                $indice++;
+                            } ?>
                         </tbody>
                     </table>
                 </div>
@@ -138,24 +128,6 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group has-feedback has-feedback-left">
-                                                    <input type="number" class="form-control" placeholder="Numero de carnet" id="txtCarnetIdentidad" name="txtCarnetIdentidad">
-                                                    <div class="form-control-feedback">
-                                                        <i class="icon-droplets"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group has-feedback has-feedback-left">
-                                                    <input type="text" class="form-control input-lg" placeholder="Fecha Nacimiento" id="txtFechaNacimiento" name="txtFechaNacimiento">
-                                                    <div class="form-control-feedback">
-                                                        <i class="icon-make-group"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group has-feedback has-feedback-left">
-                                                    <input type="text" class="form-control input-lg" placeholder="Sexo" id="txtSexo" name="txtSexo">
-                                                    <div class="form-control-feedback">
-                                                        <i class="icon-make-group"></i>
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-group has-feedback has-feedback-left">
                                                     <input type="number" class="form-control" placeholder="Numero de telefono" id="txtTelefono" name="txtTelefono">
@@ -163,12 +135,7 @@
                                                         <i class="icon-droplets"></i>
                                                     </div>
                                                 </div>
-                                                <div class="form-group has-feedback has-feedback-left">
-                                                    <input type="number" class="form-control" placeholder="Nro. nit del cliente" id="txtNit" name="txtNit">
-                                                    <div class="form-control-feedback">
-                                                        <i class="icon-droplets"></i>
-                                                    </div>
-                                                </div>
+
                                             </div>
 
                                         </div>
@@ -178,10 +145,11 @@
                             </fieldset>
 
                             <div class="text-right">
-                            <a class="btn btn-primary" id="btnCancelarE" href="<?php echo base_url();?>cliente" type="submit" name="action"><i class="fa fa-arrow-circle-left"></i> Cancelar
-                                                </a>
+                                <a class="btn btn-primary" id="btnCancelarE" href="<?php echo base_url(); ?>cliente" type="submit" name="action"><i class="fa fa-arrow-circle-left"></i> Cancelar
+                                </a>
                                 <button type="submit" class="btn btn-primary" id="btnGuardar" name="btnGuardar">Guardar <i class="icon-arrow-right14 position-right"></i></button>
-                            
+                            </div>
+
                         </form>
                     </div>
                 </div>

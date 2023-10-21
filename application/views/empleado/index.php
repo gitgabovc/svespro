@@ -96,7 +96,7 @@
 
                         <ul class="dropdown-menu dropdown-menu-right">
                           <li><a href="<?php echo base_url('empleado/edit') . "/" . $row->idEmpleado; ?>"><i class="icon-pencil5"></i> Modificar</a></li>
-                          <li><a href="<?php echo base_url('empleado/cambiarAcceso') . "/" . $row->idEmpleado."/" .$row->acceso; ?>"><i class="icon-file-pdf"></i> Cambiar Acceso</a></li>
+                          <li><a href="<?php echo base_url('empleado/cambiarAcceso') . "/" . $row->idEmpleado."/" .$row->acceso; ?>"><i class="<?php echo ($row->acceso == "1")? "icon-user-block" : "icon-user-plus" ?>"></i> <?php echo ($row->acceso == "1")? "Bloquear Acceso" : "Permitir Acceso" ?> Acceso</a></li>
                           <li><a href="#" onclick="deleteConfirm(<?php echo $row->idEmpleado; ?>)"><i class="icon-bin"></i> Eliminar</a></li>
                         </ul>
                       </li>

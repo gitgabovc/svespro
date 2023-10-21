@@ -31,7 +31,7 @@ class Marca extends CI_Controller {
 		//$data['FechaRegistro']=$_POST['txtFechaRegistro'];
 	
 		$this->marca_model->insert($data);
-		redirect('marca','refresh');
+		redirect('marca');
 
 	}
 	

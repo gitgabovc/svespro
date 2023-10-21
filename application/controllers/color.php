@@ -30,7 +30,7 @@ class Color extends CI_Controller {
 		$data['color']=$_POST['color'];
 	
 		$this->color_model->insert($data);
-		redirect('color','refresh');
+		redirect('color');
 
 	}
 	
